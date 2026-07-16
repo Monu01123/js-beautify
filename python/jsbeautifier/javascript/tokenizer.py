@@ -342,8 +342,9 @@ class Tokenizer(BaseTokenizer):
                     )
                     return ws + match.group(2)
 
-                resulting_string = re.sub(r"([^\S\n]+)(\n)", escape_ws, resulting_string)
-
+                resulting_string = re.sub(
+                    r"([^\S\n]+)(\n)", escape_ws, resulting_string
+                )
 
             return self._create_token(TOKEN.STRING, resulting_string)
 
